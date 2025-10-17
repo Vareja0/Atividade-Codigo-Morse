@@ -42,29 +42,32 @@ void main() {
     av.inserir("---..", "8");
     av.inserir("----.", "9");
 
-    String resposta;
+    int resposta;
+    String resposta2;
 
     while (ct == 0){
         System.out.println("[1] Buscar");
         System.out.println("[2] Remover");
         System.out.println("[3] Printar Arvore");
         System.out.println("[9] Sair");
-        resposta = sc.nextLine();
+        resposta = sc.nextInt();sc.nextLine();
 
-        if (resposta == "1"){
+        if (resposta == 1){
             System.out.println("Digite o codigo separando por espaço:");
-            resposta = sc.nextLine();
-            String[] resultado = countString(resposta);
+            resposta2 = sc.nextLine();
+            String[] resultado = countString(resposta2);
             for (int i = 0; i < resultado.length; i++){
-                System.out.println(resultado[i] + " = " + av.buscar(resultado[i]));
-            }
-        } else if (resposta == "2"){
+                // System.out.println(resultado[i] + " = " + av.buscar(resultado[i]));
+                System.out.print(av.buscar(resultado[i]));
+
+            } System.out.println();
+        } else if (resposta == 2){
             System.out.println("Digite o codigo:");
-            resposta = sc.nextLine();
-            System.out.println("Letra removida: " + av.remover(resposta));
-        } else if (resposta == "3"){
+            resposta2 = sc.nextLine();
+            System.out.println("Letra removida: " + av.remover(resposta2));
+        } else if (resposta == 3){
             av.printarArvore();
-        } else if (resposta == "9"){
+        } else if (resposta == 9){
             ct = 1;
         } else {
             System.out.println("Digite uma opçao valida");

@@ -55,18 +55,6 @@ public class Arvore {
         return atual.letra;
     }
 
-    public void inorder() {
-        inorderRec(raiz);
-    }
-
-    private void inorderRec(Node atual) {
-        if (atual != null) {
-            inorderRec(atual.esquerda);
-            if (atual != raiz) System.out.print(atual.letra + " = " + atual.codigoMorse + " | ");
-            inorderRec(atual.direita);
-        }
-    }
-
     public void printarArvore() {
         printarArvoreRec(raiz, 0);
     }
