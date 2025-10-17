@@ -88,4 +88,31 @@ public class Arvore {
 
         printarArvoreRec(atual.esquerda, nivel + 1);
     }
+
+    public String remover(String codigo){
+        Node atual = raiz;
+        int tamanhoCodigo = codigo.length();
+        char charAtual;
+
+        for (int i = 0; i < tamanhoCodigo; i++){
+            charAtual = codigo.charAt(i);
+
+            if (atual == null){
+                System.out.println("codigo invalido");
+                return null;
+            }
+            else if (charAtual == '-'){
+                atual = atual.direita;
+            }
+            else if (charAtual == '.'){
+                atual = atual.esquerda;
+            }
+        }
+
+        String retornar = atual.letra;
+        atual.letra = null;
+        atual.codigoMorse = null;
+
+        return retornar;
+    }
 }

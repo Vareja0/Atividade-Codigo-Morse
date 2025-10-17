@@ -42,20 +42,35 @@ void main() {
     av.inserir("---..", "8");
     av.inserir("----.", "9");
 
-    /*
-    System.out.println("digita ai separando pro virgula");
+    String resposta;
 
-    String resposta = sc.nextLine();
-    String[] resultado = countString(resposta);
+    while (ct == 0){
+        System.out.println("[1] Buscar");
+        System.out.println("[2] Remover");
+        System.out.println("[3] Printar Arvore");
+        System.out.println("[9] Sair");
+        resposta = sc.nextLine();
 
-    for (int i = 0; i < resultado.length; i++){
-        System.out.println(resultado[i] + " = " + av.buscar(resultado[i]));
+        if (resposta == "1"){
+            System.out.println("Digite o codigo separando por espaço:");
+            resposta = sc.nextLine();
+            String[] resultado = countString(resposta);
+            for (int i = 0; i < resultado.length; i++){
+                System.out.println(resultado[i] + " = " + av.buscar(resultado[i]));
+            }
+        } else if (resposta == "2"){
+            System.out.println("Digite o codigo:");
+            resposta = sc.nextLine();
+            System.out.println("Letra removida: " + av.remover(resposta));
+        } else if (resposta == "3"){
+            av.printarArvore();
+        } else if (resposta == "9"){
+            ct = 1;
+        } else {
+            System.out.println("Digite uma opçao valida");
+        }
+
     }
-
-
-    */
-
-    av.printarArvore();
 }
 
 public String[] countString(String string){
@@ -68,7 +83,7 @@ public String[] countString(String string){
 
     for (int i = 0; i < tamanho; i++){
         atual = string.charAt(i);
-        if (atual == ','){
+        if (atual == ' '){
             quantidade++;
         }
     }
@@ -77,7 +92,7 @@ public String[] countString(String string){
 
     for (int i = 0; i < tamanho; i++){
         atual = string.charAt(i);
-        if (atual == ','){
+        if (atual == ' '){
             resultado[cont] = soma;
             cont++;
             soma = "";
