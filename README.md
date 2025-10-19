@@ -22,7 +22,6 @@ O projeto está organizado em três arquivos Java:
         - `buscar(String codigo)`: Busca um caractere pelo código Morse e retorna a letra correspondente.
         - `remover(String codigo)`: Remove um caractere definindo sua `letra` e `codigoMorse` como `null`, preservando a estrutura da árvore.
         - `printarArvore()`: Exibe a árvore de forma hierárquica, mostrando a estrutura com indentação.
-        - `inorder()`: (Não utilizado) Realiza uma travessia in-order para imprimir os nós (incluído para completude).
 
 3. **Main.java**: Contém a lógica principal do programa e a interface com o usuário.
     - Inicializa a árvore com todos os códigos Morse para A–Z e 0–9.
